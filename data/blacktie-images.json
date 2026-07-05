@@ -47,8 +47,8 @@
         "slot": "about.intro.image",
         "name": "About intro image",
         "alt": "Black Tie Photography about portrait sample",
-        "src": "https://blacktie-photography.com/images/_uncompressed%20Adobe%20Lightroom/AB2.webp",
-        "provider": "site-local"
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/v1777165200/AB2_fhnipe.jpg",
+        "provider": "cloudinary"
       }
     ],
     "service": [
@@ -209,7 +209,6 @@
     "brand/site.favicon",
     "homeHero/home.hero.background",
     "intro/home.intro.image",
-    "intro/about.intro.image",
     "service/home.service.primary",
     "service/home.service.secondary",
     "service/services.family.secondary"
