@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Tie Console | Assets</title>
+  <link rel="icon" type="image/x-icon" href="/images/web.ico">
+  <link rel="stylesheet" href="css/console.css" />
+</head>
+
+<body>
+  <main class="console-shell">
+    <section class="login-view" id="loginView" aria-labelledby="loginTitle">
+      <div class="login-brand">
+        <img src="images/logo_nobackground_crop_black.png" alt="Black Tie Photography" />
+        <div>
+          <p>Black Tie Photography</p>
+          <span>Console</span>
+        </div>
+      </div>
+
+      <form class="login-panel" id="loginForm">
+        <p class="eyebrow">Private Workspace</p>
+        <h1 id="loginTitle">All-in-one media console</h1>
+
+        <label>
+          Email
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="hello@blacktie-photography.com" required>
+        </label>
+
+        <label>
+          Password
+          <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter password" required>
+        </label>
+
+        <p class="login-note">Prototype password: <strong>blacktie</strong></p>
+        <button type="submit">Sign in</button>
+      </form>
+    </section>
+
+    <section class="app-view is-hidden" id="appView" aria-label="Black Tie asset console">
+      <aside class="icon-rail" aria-label="Primary navigation">
+        <img src="images/logo_nobackground_crop_black.png" alt="Black Tie Photography">
+        <button class="rail-button is-active" type="button" aria-label="Assets">A</button>
+        <button class="rail-button" type="button" aria-label="Images">I</button>
+        <button class="rail-button" type="button" aria-label="Settings">S</button>
+      </aside>
+
+      <aside class="library-sidebar">
+        <div class="workspace-select">
+          <span>BT</span>
+          <div>
+            <strong>blacktie-photography</strong>
+            <small>Media workspace</small>
+          </div>
+        </div>
+
+        <nav class="section-nav" aria-label="Asset sections">
+          <p>Media Library</p>
+          <button class="nav-pill is-active" type="button" data-section="all">All assets</button>
+          <button class="nav-pill" type="button" data-section="homeHero">Home hero</button>
+          <button class="nav-pill" type="button" data-section="intro">Intro</button>
+          <button class="nav-pill" type="button" data-section="service">Service feature</button>
+          <button class="nav-pill" type="button" data-section="instagram">Instagram strip</button>
+        </nav>
+
+        <div class="sidebar-links">
+          <button type="button">Folders</button>
+          <button type="button">Collections</button>
+          <button type="button">Transformations</button>
+        </div>
+
+        <button class="quiet-button" id="logoutButton" type="button">Sign out</button>
+      </aside>
+
+      <section class="asset-workspace">
+        <header class="asset-header">
+          <div>
+            <p class="breadcrumb">Media Library / Assets</p>
+            <h1>Assets</h1>
+          </div>
+          <div class="header-actions">
+            <button class="quiet-button" id="resetButton" type="button">Reset</button>
+            <button class="quiet-button" id="exportButton" type="button">Export config</button>
+            <label class="upload-button">
+              <input id="imageUpload" type="file" accept=".jpg,.jpeg,.png,.webp" multiple>
+              Upload
+            </label>
+          </div>
+        </header>
+
+        <section class="search-band">
+          <label class="search-box" aria-label="Search assets">
+            <span>Search</span>
+            <input id="assetSearch" type="search" placeholder="Type a name, tag, section, or image path...">
+          </label>
+          <div class="filter-row" aria-label="Asset filters">
+            <button type="button">Folders</button>
+            <button type="button">Tags</button>
+            <button type="button">Formats</button>
+            <button type="button">Creation date</button>
+            <button type="button">Asset types</button>
+          </div>
+        </section>
+
+        <section class="upload-dropzone" id="uploadZone">
+          <p><strong>Drop images to upload</strong> or use the Upload button. Files are uploaded to Cloudinary and the returned URL is saved in this browser.</p>
+        </section>
+
+        <section class="asset-toolbar">
+          <span id="imageCount">Showing 0 assets</span>
+          <div>
+            <span id="sectionTitle">All images</span>
+            <button class="sort-button" type="button" id="sortButton">Relevance</button>
+          </div>
+        </section>
+
+        <section class="asset-grid" id="imageList" aria-live="polite"></section>
+      </section>
+
+      <aside class="preview-panel" aria-label="Asset preview and editor">
+        <div class="preview-header">
+          <strong>Preview</strong>
+          <button class="quiet-icon" id="closePreviewButton" type="button" aria-label="Clear preview">X</button>
+        </div>
+
+        <div class="empty-preview" id="emptyPreview">
+          <div class="empty-mark">BT</div>
+          <p>Select an item in the grid to preview and edit it.</p>
+        </div>
+
+        <div class="asset-preview is-hidden" id="assetPreview">
+          <div class="preview-frame">
+            <img id="previewImage" alt="Selected image preview">
+          </div>
+
+          <form class="details-form" id="detailsForm">
+            <label>
+              Display name
+              <input id="imageName" type="text" placeholder="Image title">
+            </label>
+
+            <label>
+              Image
+              <button class="choose-image-button" id="chooseImageButton" type="button">
+                <span>Choose image</span>
+                <strong id="chosenImageLabel">No image selected</strong>
+              </button>
+            </label>
+
+            <label>
+              Alt text
+              <textarea id="imageAlt" rows="3" placeholder="Describe the image for accessibility"></textarea>
+            </label>
+
+            <label>
+              Image URL or path
+              <input id="imageSrc" type="text" placeholder="/images/example.webp">
+            </label>
+
+            <div class="form-actions">
+              <button class="quiet-button" id="replaceButton" type="button">Replace</button>
+              <button class="quiet-button danger-button" id="deleteButton" type="button">Delete</button>
+              <button class="save-button" type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <template id="imageCardTemplate">
+    <article class="asset-card">
+      <button class="asset-select" type="button">
+        <img alt="">
+        <span class="selection-dot" aria-hidden="true"></span>
+      </button>
+      <div class="asset-meta">
+        <strong></strong>
+        <span></span>
+      </div>
+    </article>
+  </template>
+
+  <div class="asset-picker is-hidden" id="assetPicker" role="dialog" aria-modal="true" aria-labelledby="assetPickerTitle">
+    <div class="asset-picker__backdrop" data-close-picker></div>
+    <section class="asset-picker__panel">
+      <header class="asset-picker__header">
+        <div>
+          <p class="breadcrumb">Global assets</p>
+          <h2 id="assetPickerTitle">Choose image</h2>
+        </div>
+        <button class="quiet-icon" id="closeAssetPickerButton" type="button" aria-label="Close image chooser">X</button>
+      </header>
+
+      <div class="asset-picker__actions">
+        <label class="upload-button asset-picker__upload">
+          <input id="assetPickerUpload" type="file" accept=".jpg,.jpeg,.png,.webp">
+          Add new image
+        </label>
+      </div>
+
+      <section class="asset-picker__grid" id="assetPickerGrid" aria-live="polite"></section>
+    </section>
+  </div>
+
+  <script src="scripts/console.js"></script>
+</body>
+
+</html>

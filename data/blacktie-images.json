@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "updatedAt": "2026-07-05T00:00:00.000Z",
+  "sourceSite": "https://blacktie-photography.com",
+  "sections": {
+    "brand": [
+      {
+        "slot": "navbar.logo.light",
+        "name": "Navbar logo light",
+        "alt": "Black Tie Photography",
+        "src": "https://blacktie-photography.com/images/logo_nobackground_crop.png",
+        "provider": "site-local"
+      },
+      {
+        "slot": "navbar.logo.dark",
+        "name": "Navbar logo dark",
+        "alt": "Black Tie Photography",
+        "src": "https://blacktie-photography.com/images/logo_nobackground_crop_black.png",
+        "provider": "site-local"
+      },
+      {
+        "slot": "site.favicon",
+        "name": "Site favicon",
+        "alt": "Black Tie Photography favicon",
+        "src": "https://blacktie-photography.com/images/web.ico",
+        "provider": "site-local"
+      }
+    ],
+    "homeHero": [
+      {
+        "slot": "home.hero.background",
+        "name": "Homepage hero background",
+        "alt": "Black Tie Photography homepage hero image",
+        "src": "https://blacktie-photography.com/images/_uncompressed%20Adobe%20Lightroom/MAIN.webp",
+        "provider": "site-local"
+      }
+    ],
+    "intro": [
+      {
+        "slot": "home.intro.image",
+        "name": "Home intro image",
+        "alt": "Black Tie Photography portrait sample",
+        "src": "https://blacktie-photography.com/images/_uncompressed%20Adobe%20Lightroom/AB1.webp",
+        "provider": "site-local"
+      },
+      {
+        "slot": "about.intro.image",
+        "name": "About intro image",
+        "alt": "Black Tie Photography about portrait sample",
+        "src": "https://blacktie-photography.com/images/_uncompressed%20Adobe%20Lightroom/AB2.webp",
+        "provider": "site-local"
+      }
+    ],
+    "service": [
+      {
+        "slot": "home.service.primary",
+        "name": "Home service image one",
+        "alt": "Black Tie Photography service image",
+        "src": "https://blacktie-photography.com/images/_uncompressed%20Adobe%20Lightroom/PMCM1.webp",
+        "provider": "site-local"
+      },
+      {
+        "slot": "home.service.secondary",
+        "name": "Home service image two",
+        "alt": "Black Tie Photography service image",
+        "src": "https://blacktie-photography.com/images/_uncompressed%20Adobe%20Lightroom/PMCM2.webp",
+        "provider": "site-local"
+      },
+      {
+        "slot": "services.equine.primary",
+        "name": "Equine service image one",
+        "alt": "Equine photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177282/EQ1_goacyn.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.equine.secondary",
+        "name": "Equine service image two",
+        "alt": "Equine photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1778217951/DSC01955_wrxaay.jpg",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.family.primary",
+        "name": "Family service image one",
+        "alt": "Family photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177591/FAM1_j5imxz.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.family.secondary",
+        "name": "Family service image two",
+        "alt": "Family photography service image",
+        "src": "https://blacktie-photography.com/images/spec/529330208_122127959288894330_5694315758433306118_n.jpg",
+        "provider": "site-local"
+      },
+      {
+        "slot": "services.senior.primary",
+        "name": "Senior service image one",
+        "alt": "Senior photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177588/SEN1_vbpkr2.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.senior.secondary",
+        "name": "Senior service image two",
+        "alt": "Senior photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177362/SEN2_amvdlk.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.coupleEngagement.primary",
+        "name": "Couple and engagement service image one",
+        "alt": "Couple and engagement photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177465/CE1_fg4gap.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.coupleEngagement.secondary",
+        "name": "Couple and engagement service image two",
+        "alt": "Couple and engagement photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177282/CE2_wkrtnr.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.individualLifestyle.primary",
+        "name": "Individual and lifestyle service image one",
+        "alt": "Individual and lifestyle photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177304/IL1_cbhuag.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.individualLifestyle.secondary",
+        "name": "Individual and lifestyle service image two",
+        "alt": "Individual and lifestyle photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177509/IL2_rpzedg.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.pet.primary",
+        "name": "Pet service image one",
+        "alt": "Pet photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177357/PET1_kugbil.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "services.pet.secondary",
+        "name": "Pet service image two",
+        "alt": "Pet photography service image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177587/PET2_uwjiv1.webp",
+        "provider": "cloudinary"
+      }
+    ],
+    "instagram": [
+      {
+        "slot": "instagram.1",
+        "name": "Instagram 1",
+        "alt": "Instagram portfolio image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177363/BASE1_dro50d.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "instagram.2",
+        "name": "Instagram 2",
+        "alt": "Instagram portfolio image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177510/Base2_se046z.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "instagram.3",
+        "name": "Instagram 3",
+        "alt": "Instagram portfolio image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177466/Base3_d9iqdl.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "instagram.4",
+        "name": "Instagram 4",
+        "alt": "Instagram portfolio image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177417/Base4_nikapx.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "instagram.5",
+        "name": "Instagram 5",
+        "alt": "Instagram portfolio image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177418/Base5_txnlvj.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "instagram.6",
+        "name": "Instagram 6",
+        "alt": "Instagram portfolio image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177420/Base6_xkna1t.webp",
+        "provider": "cloudinary"
+      },
+      {
+        "slot": "instagram.7",
+        "name": "Instagram 7",
+        "alt": "Instagram portfolio image",
+        "src": "https://res.cloudinary.com/du5lzorld/image/upload/q_auto/f_auto/v1777177463/Base7_cyrnyj.webp",
+        "provider": "cloudinary"
+      }
+    ]
+  },
+  "nonCloudinaryImages": [
+    "brand/navbar.logo.light",
+    "brand/navbar.logo.dark",
+    "brand/site.favicon",
+    "homeHero/home.hero.background",
+    "intro/home.intro.image",
+    "intro/about.intro.image",
+    "service/home.service.primary",
+    "service/home.service.secondary",
+    "service/services.family.secondary"
+  ]
+}
