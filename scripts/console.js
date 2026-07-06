@@ -58,7 +58,9 @@ const defaultState = {
         id: crypto.randomUUID(),
         name: "Welcome portrait",
         alt: "Outdoor portrait session sample",
-        src: "/images/_uncompressed Adobe Lightroom/AB2.webp"
+        src: "https://res.cloudinary.com/du5lzorld/image/upload/v1777165200/AB2_fhnipe.jpg",
+        publicId: "AB2_fhnipe",
+        format: "jpg"
       }
     ]
   },
@@ -146,6 +148,19 @@ const defaultState = {
   }
 };
 
+const knownImageUrlUpdates = {
+  "/images/_uncompressed Adobe Lightroom/AB2.webp": {
+    src: "https://res.cloudinary.com/du5lzorld/image/upload/v1777165200/AB2_fhnipe.jpg",
+    publicId: "AB2_fhnipe",
+    format: "jpg"
+  },
+  "https://blacktie-photography.com/images/_uncompressed%20Adobe%20Lightroom/AB2.webp": {
+    src: "https://res.cloudinary.com/du5lzorld/image/upload/v1777165200/AB2_fhnipe.jpg",
+    publicId: "AB2_fhnipe",
+    format: "jpg"
+  }
+};
+
 let state = loadState();
 let activeSection = "all";
 let selectedImageId = getAssets()[0]?.image.id || null;
@@ -218,12 +233,12 @@ function normalizeState(source) {
       id: image.id || crypto.randomUUID(),
       name: image.name || "Untitled image",
       alt: image.alt || "",
-      src: image.src || "",
+      src: knownImageUrlUpdates[image.src]?.src || image.src || "",
       localFileName: image.localFileName,
-      publicId: image.publicId,
+      publicId: knownImageUrlUpdates[image.src]?.publicId || image.publicId,
       width: image.width,
       height: image.height,
-      format: image.format,
+      format: knownImageUrlUpdates[image.src]?.format || image.format,
       bytes: image.bytes
     }));
   });
