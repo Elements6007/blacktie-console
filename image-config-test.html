@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Tie Console | Image Config Test</title>
+  <link rel="icon" type="image/x-icon" href="/images/web.ico">
+  <style>
+    :root {
+      --bg: #151922;
+      --panel: #1b202b;
+      --panel-soft: #202633;
+      --line: #374050;
+      --text: #f7f1e8;
+      --muted: #a9b0bf;
+      --accent: #f0c88d;
+      --blue: #2495e8;
+      --danger: #e16f6f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+    }
+
+    h1,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: 1.45rem;
+      line-height: 1.2;
+    }
+
+    a,
+    button {
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: var(--panel-soft);
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 800;
+      padding: 10px 13px;
+      text-decoration: none;
+    }
+
+    button:hover,
+    a:hover {
+      border-color: var(--accent);
+    }
+
+    .eyebrow {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 18px;
+    }
+
+    .image-frame {
+      display: grid;
+      min-height: 420px;
+      place-items: center;
+      overflow: hidden;
+      background: #0c1118;
+    }
+
+    .image-frame img {
+      display: block;
+      width: 100%;
+      max-height: 680px;
+      object-fit: contain;
+    }
+
+    .status-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+    }
+
+    .status-list div {
+      display: grid;
+      gap: 5px;
+    }
+
+    dt {
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .status {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      border-radius: 999px;
+      background: rgba(36, 149, 232, 0.14);
+      color: #9fd7ff;
+      padding: 5px 9px;
+      font-weight: 900;
+    }
+
+    .status.is-error {
+      background: rgba(225, 111, 111, 0.14);
+      color: #ffd8d8;
+    }
+
+    .status.is-ok {
+      background: rgba(110, 190, 137, 0.14);
+      color: #bdf0cb;
+    }
+
+    code,
+    pre {
+      font-family: "Courier New", monospace;
+    }
+
+    pre {
+      max-height: 260px;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #0c1118;
+      color: var(--muted);
+      padding: 12px;
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 820px) {
+      header,
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">Image Config Debug</p>
+        <h1>JSON Lookup Image Test</h1>
+        <p>This page fetches the hosted config and renders the image for <code>about.intro.image</code>.</p>
+      </div>
+      <a href="/">Back to console</a>
+    </header>
+
+    <section class="layout">
+      <article class="panel image-frame">
+        <img
+          id="testImage"
+          data-image-slot="about.intro.image"
+          src="https://res.cloudinary.com/du5lzorld/image/upload/v1777165200/AB2_fhnipe.jpg"
+          alt="Black Tie Photography about portrait sample"
+        />
+      </article>
+
+      <aside class="panel">
+        <dl class="status-list">
+          <div>
+            <dt>Status</dt>
+            <dd><span class="status" id="statusBadge">Loading</span></dd>
+          </div>
+          <div>
+            <dt>Config URL</dt>
+            <dd id="configUrl"></dd>
+          </div>
+          <div>
+            <dt>Slot</dt>
+            <dd id="slotName">about.intro.image</dd>
+          </div>
+          <div>
+            <dt>Resolved Image URL</dt>
+            <dd id="resolvedUrl">Waiting for config...</dd>
+          </div>
+          <div>
+            <dt>Provider</dt>
+            <dd id="providerName">Waiting for config...</dd>
+          </div>
+          <div>
+            <dt>Image Load</dt>
+            <dd id="imageStatus">Waiting for image...</dd>
+          </div>
+        </dl>
+
+        <h2>Matched JSON Entry</h2>
+        <pre id="matchedJson">Waiting for config...</pre>
+
+        <button id="reloadButton" type="button">Reload config</button>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const IMAGE_CONFIG_URL = "https://console.blacktie-photography.com/data/blacktie-images.json";
+    const TEST_SLOT = "about.intro.image";
+
+    const statusBadge = document.querySelector("#statusBadge");
+    const configUrl = document.querySelector("#configUrl");
+    const resolvedUrl = document.querySelector("#resolvedUrl");
+    const providerName = document.querySelector("#providerName");
+    const imageStatus = document.querySelector("#imageStatus");
+    const matchedJson = document.querySelector("#matchedJson");
+    const testImage = document.querySelector("#testImage");
+    const reloadButton = document.querySelector("#reloadButton");
+
+    configUrl.textContent = IMAGE_CONFIG_URL;
+
+    function setStatus(text, type = "") {
+      statusBadge.textContent = text;
+      statusBadge.classList.toggle("is-ok", type === "ok");
+      statusBadge.classList.toggle("is-error", type === "error");
+    }
+
+    function buildLookup(config) {
+      return Object.values(config.sections || {})
+        .flat()
+        .reduce((lookup, image) => {
+          lookup[image.slot] = image;
+          return lookup;
+        }, {});
+    }
+
+    async function applyImageConfig() {
+      setStatus("Loading");
+      resolvedUrl.textContent = "Waiting for config...";
+      providerName.textContent = "Waiting for config...";
+      imageStatus.textContent = "Waiting for image...";
+      matchedJson.textContent = "Waiting for config...";
+
+      const response = await fetch(IMAGE_CONFIG_URL, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`Image config returned ${response.status}`);
+      }
+
+      const config = await response.json();
+      const image = buildLookup(config)[TEST_SLOT];
+
+      if (!image?.src) {
+        throw new Error(`No image found for slot ${TEST_SLOT}`);
+      }
+
+      testImage.src = image.src;
+      testImage.alt = image.alt || testImage.alt;
+      resolvedUrl.textContent = image.src;
+      providerName.textContent = image.provider || "Not provided";
+      matchedJson.textContent = JSON.stringify(image, null, 2);
+      setStatus("Config loaded", "ok");
+    }
+
+    function showConfigError(error) {
+      const likelyCause = error instanceof TypeError
+        ? "Likely CORS or network access. Confirm the JSON response includes Access-Control-Allow-Origin."
+        : "The JSON URL responded, but the config could not be used.";
+
+      console.warn("Image config could not be loaded.", error);
+      matchedJson.textContent = `${error.message}\n\n${likelyCause}`;
+      setStatus("Config error", "error");
+    }
+
+    testImage.addEventListener("load", () => {
+      imageStatus.textContent = "Image loaded successfully.";
+    });
+
+    testImage.addEventListener("error", () => {
+      imageStatus.textContent = "Image failed to load.";
+      setStatus("Image error", "error");
+    });
+
+    reloadButton.addEventListener("click", () => {
+      applyImageConfig().catch(showConfigError);
+    });
+
+    applyImageConfig().catch(showConfigError);
+  </script>
+</body>
+
+</html>
